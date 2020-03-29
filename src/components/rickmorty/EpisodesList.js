@@ -4,14 +4,18 @@ import axios from 'axios';
 
 export default class EpisodesList extends Component {
     state = {
-        url: 'https://rickandmortyapi.com/api/episode',
         episodeList: [],
         episodeInfo: null 
     }
 
     async componentDidMount(){
+        let url = 'https://rickandmortyapi.com/api/episode';
+        if(this.props.filter){
+            url = 'https://rickandmortyapi.com/api/episode/?name='+this.props.filter
+        }
         if (!this.props.episodes){
-            const res = await axios.get(this.state.url);
+            console.log(url);
+            const res = await axios.get(url);
             this.setState({ episodeList: res.data.results});
             this.setState({ episodeInfo: res.data.info});
             var next = res.data.info.next;

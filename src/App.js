@@ -5,6 +5,7 @@ import Dashboard from './components/layout/DashBoard';
 import Episode from './components/rickmorty/Episode';
 import Location from './components/rickmorty/Location';
 import Character from './components/rickmorty/Character';
+import SearchBar from './components/rickmorty/SearchBar';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -21,6 +22,7 @@ function App() {
             <Route exact path="/episode/:episodeIndex" component={Episode}/>
             <Route exact path="/character/:characterIndex" component={Character}/>
             <Route exact path="/location/:locationIndex" component={Location}/>
+            <Route exact path="/search/:searchValue" component={SearchBar}/>
           </Switch>
         </div>
       </div>

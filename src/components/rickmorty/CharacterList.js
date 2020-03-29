@@ -11,17 +11,28 @@ export default class CharacterList extends Component {
     }
 
     async componentDidMount(){
+        const filter = this.props.filter;
+        const index = this.props.index;
         let url = '';
         if (this.props.location) {
-            url = 'https://rickandmortyapi.com/api/location';
+            url = 'https://rickandmortyapi.com/api/location/'+index;
             
         } else {
-            url = this.state.url;
+            url = filter ? 'https://rickandmortyapi.com/api/character/?name='+filter : this.state.url+'/'+index;
         }
-        const index = this.props.index;
-        const res = await axios.get(url+'/'+index);
-        console.log(res);
-        if (this.props.location) {
+        const res = await axios.get(url);
+        if (this.props.filter){
+            const res = await axios.get(url);
+            this.setState({ characters: res.data.results});
+            var next = res.data.info.next;
+            // Iteramos todas las pages
+            while (next !== "") {
+                var nextRequest = await axios.get(next);
+                this.setState({ episodeList: [...this.state.characters, ...nextRequest.data.results] });
+                next = nextRequest.data.info.next;
+            }
+
+        }else if (this.props.location) {
             for (let index = 0; index < res.data.residents.length; index++) {
                 const characterInfo = await axios.get(res.data.residents[index]);
                 this.setState({ characters: [...this.state.characters,characterInfo.data]});

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import CharacterList from '../rickmorty/CharacterList';
-import LocacationCard from './LocationCard';
+import LocationCard from './LocationCard';
 import axios from 'axios';
 
 
@@ -23,7 +23,7 @@ export default class Location extends Component {
         const {name, type, dimension} = this.state;
         return (
             <div>
-                {this.state.id ? <LocacationCard id={this.state.id} type={type} name ={name} dimension={dimension}/>: <h1> </h1>}
+                {this.state.id ? <LocationCard id={this.state.id} type={type} name ={name} dimension={dimension}/>: <h1> </h1>}
                 <h1> Residentes </h1>
                 {this.state.id ? <CharacterList location={true} index={this.state.id}/> :<h1> Cargando </h1>}
             </div>
