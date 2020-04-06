@@ -11,13 +11,11 @@ export default class EpisodesList extends Component {
     async componentDidMount(){
         let url = 'https://integracion-rick-morty-api.herokuapp.com/api/episode';
         if(this.props.filter){
-            url = 'https://integracion-rick-morty-api.herokuapp.com/api/?name='+this.props.filter
+            url = 'https://integracion-rick-morty-api.herokuapp.com/api/episode/?name='+this.props.filter
         }
         if (!this.props.episodes){
-            console.log(url);
             const res = await axios.get(url);
-            this.setState({ episodeList: res.data.results});
-            this.setState({ episodeInfo: res.data.info});
+            this.setState({ episodeList: res.data.results, episodeInfo: res.data.info});
             var next = res.data.info.next;
             // Iteramos todas las pages
             while (next !== "") {

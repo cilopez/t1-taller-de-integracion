@@ -29,7 +29,7 @@ export default class LocationList extends Component {
             (
             <div className='row'>
                 {this.state.locationList.map(location => {
-                    return (<LocationCard key={location.id} dimension={location.dimension}  name={location.name} />);
+                    return (<LocationCard key={location.id} id={location.id} dimension={location.dimension}  name={location.name} />);
                 })}
             </div>
             ): <h3>Not found</h3>

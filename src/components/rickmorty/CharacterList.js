@@ -28,7 +28,7 @@ export default class CharacterList extends Component {
             // Iteramos todas las pages
             while (next !== "") {
                 var nextRequest = await axios.get(next);
-                this.setState({ episodeList: [...this.state.characters, ...nextRequest.data.results] });
+                this.setState({ characters: [...this.state.characters, ...nextRequest.data.results] });
                 next = nextRequest.data.info.next;
             }
 

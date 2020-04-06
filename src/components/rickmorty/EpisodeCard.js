@@ -53,7 +53,7 @@ export default class EpisodeCard extends Component {
                 <StyledLink to={`/episode/${this.state.number}`}>
                     <Card className='card'>
                         <h7 className='card-header'>{episodeCode}</h7>
-                        <Sprite className='card-img-top rounded mx-auto mt-2' draggable={false} src={'https://rickandmortyapi.com/api/character/avatar/1.jpeg'}></Sprite>
+                        <Sprite className='card-img-top rounded mx-auto mt-2' draggable={false} src={'https://integracion-rick-morty-api.herokuapp.com/api/character/avatar/1.jpeg'}></Sprite>
                         <div className='card-body mx-auto'>
                             <h6 className='card-title'>{name}</h6>
                             <h8 className='card-description'>{airDate}</h8>
