@@ -38,7 +38,7 @@ export default class EpisodeCard extends Component {
         name: '',
         airDate: '',
         episodeCode: '',
-        episodeLink: 'https://rickandmortyapi.com/api/episode/',
+        episodeLink: 'https://integracion-rick-morty-api.herokuapp.com/api/episode/',
         characters: []
     }
     

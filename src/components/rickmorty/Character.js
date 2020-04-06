@@ -8,7 +8,7 @@ import EpisodesList from './EpisodesList';
 export default class Character extends Component {
 
     state = {
-        url: 'https://rickandmortyapi.com/api/character/',
+        url: 'https://integracion-rick-morty-api.herokuapp.com/api/character/',
         character: null,
     }
 

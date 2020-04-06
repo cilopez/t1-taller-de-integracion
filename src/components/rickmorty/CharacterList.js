@@ -6,7 +6,7 @@ export default class CharacterList extends Component {
     state = {
         index: '',
         characters: [],
-        url: 'https://rickandmortyapi.com/api/episode',
+        url: 'https://integracion-rick-morty-api.herokuapp.com/api/episode',
         location: null
     }
 
@@ -15,10 +15,10 @@ export default class CharacterList extends Component {
         const index = this.props.index;
         let url = '';
         if (this.props.location) {
-            url = 'https://rickandmortyapi.com/api/location/'+index;
+            url = 'https://integracion-rick-morty-api.herokuapp.com/api/location/'+index;
             
         } else {
-            url = filter ? 'https://rickandmortyapi.com/api/character/?name='+filter : this.state.url+'/'+index;
+            url = filter ? 'https://integracion-rick-morty-api.herokuapp.com/api/character/?name='+filter : this.state.url+'/'+index;
         }
         const res = await axios.get(url);
         if (this.props.filter){

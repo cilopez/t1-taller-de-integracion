@@ -9,9 +9,9 @@ export default class EpisodesList extends Component {
     }
 
     async componentDidMount(){
-        let url = 'https://rickandmortyapi.com/api/episode';
+        let url = 'https://integracion-rick-morty-api.herokuapp.com/api/episode';
         if(this.props.filter){
-            url = 'https://rickandmortyapi.com/api/episode/?name='+this.props.filter
+            url = 'https://integracion-rick-morty-api.herokuapp.com/api/?name='+this.props.filter
         }
         if (!this.props.episodes){
             console.log(url);

@@ -10,7 +10,7 @@ export default class LocationList extends Component {
 
     async componentDidMount(){
         const filter = this.props.filter;
-        const url = 'https://rickandmortyapi.com/api/location/?name='+filter;
+        const url = 'https://integracion-rick-morty-api.herokuapp.com/api/location/?name='+filter;
         const res = await axios.get(url);
         this.setState({ locationInfo: res.data.info, locationList: res.data.results});
         var next = res.data.info.next;

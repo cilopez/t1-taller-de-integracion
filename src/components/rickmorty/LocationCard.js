@@ -38,7 +38,7 @@ export default class LocationCard extends Component {
     state = {
         id: '',
         name: '',
-        episodeLink: 'https://rickandmortyapi.com/api/location/',
+        episodeLink: 'https://integracion-rick-morty-api.herokuapp.com/api/location/',
         url: '',
         dimension: null
     }

@@ -10,7 +10,7 @@ export default class Location extends Component {
         name: '',
         type: '',
         dimension: '',
-        url: 'https://rickandmortyapi.com/api/location/',
+        url: 'https://integracion-rick-morty-api.herokuapp.com/api/location/',
         characters: [],
     } 
     async componentDidMount(){
